@@ -1,5 +1,7 @@
 @import '../../styles/variables.css';
 
 body {
+    display: flex;
     background: var(--white);
+    border-radius: 10px;
 }
