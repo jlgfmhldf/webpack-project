@@ -1,11 +1,10 @@
 const path = require('path')
 const webpack = require('webpack')
-const StyleLintPlugin = require('stylelint-webpack-plugin');
-
+const StyleLintPlugin = require('stylelint-webpack-plugin')
 
 const NODE_ENV = process.env.NODE_ENV || 'development'
 const isDevelopment = NODE_ENV === 'development'
-const {stringify} = JSON
+const { stringify } = JSON
 
 module.exports = {
     devtool: 'cheap-module-eval-source-map',
