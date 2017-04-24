@@ -6,6 +6,8 @@ import './Test.css'
 export default class Test extends PureComponent {
 
     render() {
-        return <div>Hello!</div>
-    }
+        return (
+          <div className='test'>Hello!</div>
+        )
+      }      
 }

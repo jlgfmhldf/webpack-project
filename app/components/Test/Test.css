@@ -5,3 +5,7 @@ body {
     background: var(--white);
     border-radius: 10px;
 }
+
+.test {
+  background: red;
+}
