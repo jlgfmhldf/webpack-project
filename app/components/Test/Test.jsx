@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react'
-import { number } from 'prop-types'
+// import { } from 'prop-types'
 
 import './Test.css'
 

@@ -10,6 +10,7 @@
     "lint": "eslint ./app/"
   },
   "dependencies": {
+    "eslint-plugin-react": "^6.10.3",
     "prop-types": "^15.5.8",
     "react": "^15.5.4",
     "react-dom": "^15.5.4"
