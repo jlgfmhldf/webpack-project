@@ -10,7 +10,6 @@
     "lint": "eslint ./app/"
   },
   "dependencies": {
-    "eslint-plugin-react": "^6.10.3",
     "prop-types": "^15.5.8",
     "react": "^15.5.4",
     "react-dom": "^15.5.4"
@@ -28,6 +27,8 @@
     "css-loader": "^0.28.0",
     "eslint": "^3.19.0",
     "eslint-config-google": "^0.7.1",
+    "eslint-loader": "^1.7.1",
+    "eslint-plugin-react": "^6.10.3",
     "express": "^4.15.2",
     "postcss-custom-properties": "^5.0.2",
     "postcss-loader": "^1.3.3",

@@ -44,6 +44,7 @@ module.exports = {
             use: [
                 'react-hot-loader',
                 'babel-loader',
+                'eslint-loader',
             ],
         }, {
             test: /\.css$/,
