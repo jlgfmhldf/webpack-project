@@ -1,10 +1,16 @@
 const path = require('path')
 const webpack = require('webpack')
-const StyleLintPlugin = require('stylelint-webpack-plugin')
-
+const StyleLintPlugin = require('stylelint-webpack-plugin') //TODO
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const NODE_ENV = process.env.NODE_ENV || 'development'
 const isDevelopment = NODE_ENV === 'development'
 const { stringify } = JSON
+
+const cssLoaders = [
+    'style-loader',
+    'css-loader',
+    'postcss-loader',
+]
 
 module.exports = {
     entry: [
@@ -32,6 +38,7 @@ module.exports = {
             files: ['./app/components/**/*.css'], //TODO,
             configFile: './.stylelintrc'
         }),
+        new ExtractTextPlugin("styles.css")
     ],
     devServer: {
         inline: true
@@ -48,22 +55,7 @@ module.exports = {
             ],
         }, {
             test: /\.css$/,
-            use: [
-                'style-loader',
-                'css-loader',
-                {
-                    loader: 'postcss-loader',
-                    options: {
-                        plugins: function () {
-                            return [
-                                require('precss'),
-                                require('postcss-custom-properties'),
-                                require('autoprefixer'),
-                            ];
-                        }
-                    }
-                }
-            ],
+            use: isDevelopment ? cssLoaders : ExtractTextPlugin.extract(cssLoaders)
         }]
     },
     resolve: {
