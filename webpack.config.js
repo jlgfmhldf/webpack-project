@@ -58,6 +58,7 @@ module.exports = {
                             return [
                                 require('precss'),
                                 require('postcss-custom-properties'),
+                                require('postcss-size'),
                                 require('autoprefixer'),
                             ];
                         }
