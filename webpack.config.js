@@ -15,8 +15,8 @@ const cssLoaders = [
 module.exports = {
     entry: [
         './app/index.jsx',
-        'webpack-hot-middleware/client',
-        'babel-polyfill',
+        // 'webpack-hot-middleware/client',
+        // 'babel-polyfill',
     ],
     output: {
         path: path.join(__dirname, 'public'),
@@ -26,7 +26,7 @@ module.exports = {
     watchOptions: {
         aggregateTimeout: 100,
     },
-    devtool: isDevelopment ? 'cheap-inline-module-source-map' : null,
+    devtool: isDevelopment && 'cheap-inline-module-source-map',
     plugins: [
         new webpack.optimize.OccurrenceOrderPlugin(),
         new webpack.HotModuleReplacementPlugin(),
@@ -38,7 +38,7 @@ module.exports = {
             files: ['./app/components/**/*.css'], //TODO,
             configFile: './.stylelintrc'
         }),
-        new ExtractTextPlugin("styles.css")
+        new ExtractTextPlugin(path.join(__dirname, 'public/styles.css'))
     ],
     devServer: {
         inline: true
@@ -55,7 +55,13 @@ module.exports = {
             ],
         }, {
             test: /\.css$/,
-            use: isDevelopment ? cssLoaders : ExtractTextPlugin.extract(cssLoaders)
+            use: isDevelopment ? cssLoaders : ExtractTextPlugin.extract({
+                fallback: 'style-loader',
+                use: [
+                    'css-loader',
+                    'postcss-loader'
+                ]
+            })
         }]
     },
     resolve: {
