@@ -62,6 +62,13 @@ module.exports = {
                     'postcss-loader'
                 ]
             })
+        },
+        {
+            test: /\.(eot|svg|ttf|woff|woff2)$/,
+            loader: 'url-loader',
+            options: {
+                limit: 1,
+            },
         }]
     },
     resolve: {

@@ -1,11 +1,12 @@
 @import '../../styles/variables.css';
-
-body {
-    display: flex;
-    background: var(--white);
-    border-radius: 10px;
-}
+@import '../../styles/fonts.css';
 
 .test {
   background: red;
+  size: 50px 70px;
+  font-family: 'Open Sans';
 }
+
+
+
+
