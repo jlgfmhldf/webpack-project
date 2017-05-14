@@ -2,8 +2,9 @@
 @import '../../styles/fonts.css';
 
 .test {
-  background: red;
+  background: var(--white);
   size: 50px 70px;
+  padding: 20px;
   font-family: 'Open Sans';
 }
 

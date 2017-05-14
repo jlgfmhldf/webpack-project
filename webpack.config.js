@@ -1,7 +1,7 @@
 const path = require('path')
 const webpack = require('webpack')
-const StyleLintPlugin = require('stylelint-webpack-plugin')
-
+const StyleLintPlugin = require('stylelint-webpack-plugin') //TODO
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const NODE_ENV = process.env.NODE_ENV || 'development'
 const isDevelopment = NODE_ENV === 'development'
 const { stringify } = JSON
@@ -20,7 +20,7 @@ module.exports = {
     watchOptions: {
         aggregateTimeout: 100,
     },
-    devtool: isDevelopment ? 'cheap-inline-module-source-map' : null,
+    devtool: isDevelopment && 'cheap-inline-module-source-map',
     plugins: [
         new webpack.optimize.OccurrenceOrderPlugin(),
         new webpack.HotModuleReplacementPlugin(),
@@ -32,6 +32,7 @@ module.exports = {
             files: ['./app/components/**/*.css'], //TODO,
             configFile: './.stylelintrc'
         }),
+        new ExtractTextPlugin('style.css')
     ],
     devServer: {
         inline: true
@@ -48,23 +49,16 @@ module.exports = {
             ],
         }, {
             test: /\.css$/,
-            use: [
+            use: isDevelopment ? [
                 'style-loader',
                 'css-loader',
-                {
-                    loader: 'postcss-loader',
-                    options: {
-                        plugins: function () {
-                            return [
-                                require('precss'),
-                                require('postcss-custom-properties'),
-                                require('postcss-size'),
-                                require('autoprefixer'),
-                            ];
-                        }
-                    }
-                }
-            ],
+                'postcss-loader',
+            ] : ExtractTextPlugin.extract({
+                use: [
+                    'css-loader',
+                    'postcss-loader',
+                ]
+            }),
         },
         {
             test: /\.(eot|svg|ttf|woff|woff2)$/,
