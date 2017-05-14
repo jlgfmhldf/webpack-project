@@ -6,17 +6,11 @@ const NODE_ENV = process.env.NODE_ENV || 'development'
 const isDevelopment = NODE_ENV === 'development'
 const { stringify } = JSON
 
-const cssLoaders = [
-    'style-loader',
-    'css-loader',
-    'postcss-loader',
-]
-
 module.exports = {
     entry: [
         './app/index.jsx',
-        // 'webpack-hot-middleware/client',
-        // 'babel-polyfill',
+        'webpack-hot-middleware/client',
+        'babel-polyfill',
     ],
     output: {
         path: path.join(__dirname, 'public'),
@@ -38,7 +32,7 @@ module.exports = {
             files: ['./app/components/**/*.css'], //TODO,
             configFile: './.stylelintrc'
         }),
-        new ExtractTextPlugin(path.join(__dirname, 'public/styles.css'))
+        new ExtractTextPlugin('style.css')
     ],
     devServer: {
         inline: true
@@ -55,13 +49,16 @@ module.exports = {
             ],
         }, {
             test: /\.css$/,
-            use: isDevelopment ? cssLoaders : ExtractTextPlugin.extract({
-                fallback: 'style-loader',
+            use: isDevelopment ? [
+                'style-loader',
+                'css-loader',
+                'postcss-loader',
+            ] : ExtractTextPlugin.extract({
                 use: [
                     'css-loader',
-                    'postcss-loader'
+                    'postcss-loader',
                 ]
-            })
+            }),
         },
         {
             test: /\.(eot|svg|ttf|woff|woff2)$/,
