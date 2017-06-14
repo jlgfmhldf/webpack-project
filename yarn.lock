@@ -1527,14 +1527,6 @@ csso@~2.3.1:
     clap "^1.0.9"
     source-map "^0.5.3"
 
-csswring@^6.0.0:
-  version "6.0.0"
-  resolved "https://registry.yarnpkg.com/csswring/-/csswring-6.0.0.tgz#9166f6f56851646e6f55d21fb7716a605b5df893"
-  dependencies:
-    minimist "^1.2.0"
-    onecolor "^3.0.4"
-    postcss "^6.0.0"
-
 currently-unhandled@^0.4.1:
   version "0.4.1"
   resolved "https://registry.yarnpkg.com/currently-unhandled/-/currently-unhandled-0.4.1.tgz#988df33feab191ef799a61369dd76c17adf957ea"
