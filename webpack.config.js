@@ -1,7 +1,10 @@
 const path = require('path')
 const webpack = require('webpack')
+const mqpacker = require('css-mqpacker')
+const csswring = require('csswring')
 const StyleLintPlugin = require('stylelint-webpack-plugin') //TODO
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const PostCSSAssetsPlugin = require('postcss-assets-webpack-plugin')
 const NODE_ENV = process.env.NODE_ENV || 'development'
 const isDevelopment = NODE_ENV === 'development'
 const { stringify } = JSON
@@ -32,7 +35,20 @@ module.exports = {
             files: ['./app/components/**/*.css'], //TODO,
             configFile: './.stylelintrc'
         }),
-        new ExtractTextPlugin('style.css')
+        new ExtractTextPlugin('style.css'),
+        new PostCSSAssetsPlugin({
+            test: /\.css$/,
+            log: true,
+            plugins: [
+                // Pack same CSS media query rules into one media query rule
+                mqpacker,
+                // Minify CSS file with source maps. That’s only
+                csswring({
+                    preservehacks: true,
+                    removeallcomments: true
+                }),
+            ],
+        }),
     ],
     devServer: {
         inline: true
@@ -49,11 +65,7 @@ module.exports = {
             ],
         }, {
             test: /\.css$/,
-            use: isDevelopment ? [
-                'style-loader',
-                'css-loader',
-                'postcss-loader',
-            ] : ExtractTextPlugin.extract({
+            use: ExtractTextPlugin.extract({
                 use: [
                     'css-loader',
                     'postcss-loader',

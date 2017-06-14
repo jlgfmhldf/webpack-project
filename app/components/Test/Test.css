@@ -1,6 +1,12 @@
 @import '../../styles/variables.css';
 @import '../../styles/fonts.css';
 
+@media screen and (max-width: 768px) {
+  .test {
+    background: goldenrod;
+  }
+}
+
 .test {
   background: var(--white);
   size: 50px 70px;
