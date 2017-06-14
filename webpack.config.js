@@ -1,7 +1,7 @@
 const path = require('path')
 const webpack = require('webpack')
 const mqpacker = require('css-mqpacker')
-const csswring = require('csswring')
+const cssnano = require('cssnano')
 const StyleLintPlugin = require('stylelint-webpack-plugin') //TODO
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const PostCSSAssetsPlugin = require('postcss-assets-webpack-plugin')
@@ -42,10 +42,8 @@ module.exports = {
             plugins: [
                 // Pack same CSS media query rules into one media query rule
                 mqpacker,
-                // Minify CSS file with source maps. That’s only
-                csswring({
-                    preservehacks: true,
-                    removeallcomments: true
+                cssnano({
+                    preset: 'default'
                 }),
             ],
         }),
