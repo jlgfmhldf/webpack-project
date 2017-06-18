@@ -6,9 +6,11 @@
   "author": "Виктория Земцева <jlgfmhldf@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "node server.js",
-    "build": "webpack NODE_ENV=production",
-    "lint": "eslint ./app/",
+    "start": "NODE_ENV=develop node server.js",
+    "build": "NODE_ENV=production webpack",
+    "lint": "eslint .",
+    "lint:changed": "eslint `git diff --name-status $(git merge-base origin/develop HEAD)..HEAD | grep -E '^[AMR]' | awk ' {print $2} ' | grep -E '\\.js$'`",
+    "lint:fix": "eslint --fix .",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
@@ -17,7 +19,10 @@
     "noop3": "^999.999.999",
     "prop-types": "^15.5.8",
     "react": "^15.5.4",
-    "react-dom": "^15.5.4"
+    "react-dom": "^15.5.4",
+    "react-redux": "^5.0.5",
+    "redux": "^3.7.0",
+    "redux-devtools": "^3.4.0"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^3.1.2",
