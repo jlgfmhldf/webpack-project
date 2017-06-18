@@ -3717,6 +3717,10 @@ node-pre-gyp@^0.6.29:
     tar "^2.2.1"
     tar-pack "^3.4.0"
 
+noop3@^999.999.999:
+  version "999.999.999"
+  resolved "https://registry.yarnpkg.com/noop3/-/noop3-999.999.999.tgz#eb9a228ef9ac5a6528491d9cf668892dd5f9c5c1"
+
 nopt@^4.0.1:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/nopt/-/nopt-4.0.1.tgz#d0d4685afd5415193c8c7505602d0d17cd64474d"
