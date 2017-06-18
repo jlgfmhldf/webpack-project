@@ -29,6 +29,7 @@ plugins: [
 
 parserOptions:
   sourceType: module
+  ecmaVersion: 6
   ecmaFeatures:
     jsx: true
 
@@ -36,4 +37,7 @@ rules:
   no-unused-vars: error
   react/jsx-uses-react: 1
   react/jsx-uses-vars: 1
-  indent: [error, tab]
+  indent:
+    - error
+    - tab
+  no-extra-semi: error

@@ -10,7 +10,7 @@
     "build": "NODE_ENV=production webpack",
     "lint": "eslint .",
     "lint:changed": "eslint `git diff --name-status $(git merge-base origin/develop HEAD)..HEAD | grep -E '^[AMR]' | awk ' {print $2} ' | grep -E '\\.js$'`",
-    "lint:fix": "eslint --fix .",
+    "lint:fix": "eslint --ext .js --ext .jsx --fix ./",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },

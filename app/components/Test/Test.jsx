@@ -8,22 +8,22 @@ const b = bem('test')
 import './Test.css'
 
 export default class Test extends PureComponent {
-    static propTypes = {
-        children: node,
-        onClick: func,
-    }
+	static propTypes = {
+		children: node,
+		onClick: func,
+	}
 
-    static defaultProps = {
-        children: 'Test',
-        onClick: noop,
-    }
+	static defaultProps = {
+		children: 'Test',
+		onClick: noop,
+	}
 
-    render() {
-        const { children } = this.props
+	render() {
+		const { children } = this.props
 
-        return (
+		return (
           <div className={b}>{children}</div>
-        )
-      }
+		)
+	}
 }
 
