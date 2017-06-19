@@ -1,7 +1,5 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import { action } from '@storybook/addon-actions'
-import { linkTo } from '@storybook/addon-links'
 import { withKnobs, text } from '@storybook/addon-knobs'
 import Test from './Test'
 
@@ -16,5 +14,3 @@ storiesOf('Test', module)
             {...knobs()}
         />
     )
-
-
