@@ -34,7 +34,7 @@ parserOptions:
     jsx: true
 
 rules:
-  no-unused-vars: error
+  no-unused-vars: 1
   react/jsx-uses-react: 1
   react/jsx-uses-vars: 1
   indent:
