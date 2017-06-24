@@ -73,7 +73,7 @@ module.exports = {
 			test: /\.css$/,
 			use: ExtractTextPlugin.extract({
 				use: [
-					'css-loader',
+					'css-loader?modules',
 					'postcss-loader',
 				]
 			}),
