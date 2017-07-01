@@ -32,7 +32,7 @@ module.exports = {
 			NODE_ENV: stringify(NODE_ENV),
 		}),
 		new StyleLintPlugin({
-			files: ['./app/components/**/*.css'], //TODO,
+			files: ['./app/components/**/*.css', './app/styles/*.css'], //TODO,
 			configFile: './.stylelintrc'
 		}),
 		new ExtractTextPlugin('style.css'),
