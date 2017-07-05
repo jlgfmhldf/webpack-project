@@ -1,9 +1,9 @@
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
-import { Button } from 'react-toolbox/lib/button'
 
+/* eslint-disable no-unused-vars */
 const mapStateToProps = state => ({
-	test: state.test,
+
 })
 
 const mapDispatchToProps = dispatch => ({
@@ -15,9 +15,7 @@ export default class App extends PureComponent {
 	render() {
 		return (
 			<div>
-				<div>
-					<Button label='Hello!!' raised primary/>
-				</div>
+				Hello!!!
 			</div>
 		)
 	}
