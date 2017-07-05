@@ -10,7 +10,7 @@ if (__DEV__) {
 			window.location.href.match(/[?&]debug_session=([^&]+)\b/)
 		),
 		createStore,
-	);
+	)
 }
 
 export function renderDevTools(store) {

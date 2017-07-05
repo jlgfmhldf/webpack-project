@@ -40,7 +40,7 @@ module.exports = {
 			test: /\.css$/,
 			log: true,
 			plugins: [
-                // Pack same CSS media query rules into one media query rule
+				// Pack same CSS media query rules into one media query rule
 				mqpacker,
 				cssnano({
 					preset: 'default'
@@ -93,12 +93,14 @@ module.exports = {
 
 if (NODE_ENV === 'production') {
 	module.exports.plugins.push(
-        new webpack.optimize.UglifyJsPlugin({
-	compress: {
-		warnings: false,
-		drop_console: true,
-		unsafe: true,
-	}
-})
-    )
+		new webpack.optimize.UglifyJsPlugin(
+			{
+				compress: {
+					warnings: false,
+					drop_console: true,
+					unsafe: true,
+				}
+			}
+		)
+	)
 }

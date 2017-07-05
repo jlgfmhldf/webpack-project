@@ -13,9 +13,9 @@ import {
 	CardActions,
 } from 'react-toolbox'
 
-
+/* eslint-disable no-unused-vars */
 const mapStateToProps = state => ({
-	test: state.test,
+
 })
 
 const mapDispatchToProps = dispatch => ({

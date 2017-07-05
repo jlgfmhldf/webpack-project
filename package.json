@@ -9,11 +9,12 @@
     "start": "NODE_ENV=develop node server.js",
     "build": "NODE_ENV=production webpack",
     "lint": "eslint .",
-    "lint:changed": "eslint `git diff --name-status $(git merge-base origin/develop HEAD)..HEAD | grep -E '^[AMR]' | awk ' {print $2} ' | grep -E '\\.js$'`",
+    "lint:changed": "eslint `git diff --name-status $(git merge-base origin/master HEAD)..HEAD | grep -E '^[AMR]' | awk ' {print $2} ' | grep -E '\\.js$'`",
     "lint:fix": "eslint --ext .js --ext .jsx --fix ./",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
+  "pre-commit": "lint:changed",
   "dependencies": {
     "bem-cn": "^2.1.3",
     "noop3": "^999.999.999",
@@ -61,7 +62,7 @@
     "stylelint": "^7.10.1",
     "stylelint-webpack-plugin": "^0.7.0",
     "url-loader": "^0.5.8",
-    "webpack": "^2.4.1",
+    "webpack": "3.0.0",
     "webpack-dev-middleware": "^1.10.1",
     "webpack-hot-middleware": "^2.18.0"
   }
