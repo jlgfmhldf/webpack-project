@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react'
+import { uniq } from 'ramda'
 import { connect } from 'react-redux'
 import { Button } from 'react-toolbox/lib/button'
 import {
@@ -24,7 +25,7 @@ const getIngridients = () => {
 		Array.prototype.push.apply(arrayOfIngridients, ingridients)
 	})
 
-	return arrayOfIngridients
+	return uniq(arrayOfIngridients)
 }
 
 const renderListOfIngridients = (list, onClick) =>
