@@ -6,7 +6,6 @@ import {
 	CardMedia,
 	CardTitle,
 	CardText,
-	CardActions,
 	Button,
 } from 'react-toolbox'
 import './SmoothiesCard.css'

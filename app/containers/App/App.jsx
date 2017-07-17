@@ -1,19 +1,14 @@
 import React, { PureComponent } from 'react'
 import { uniq } from 'ramda'
 import { connect } from 'react-redux'
-import { Button } from 'react-toolbox/lib/button'
 import {
 	Layout,
 	Panel,
 	AppBar,
-	Checkbox,
-	Card,
-	CardMedia,
-	CardTitle,
-	CardText,
-	CardActions,
+	Button,
 } from 'react-toolbox'
 import SmoothiesCard from '../../components/SmoothiesCard'
+import Link from '../../components/Link'
 import list from '../../../data/list.json'
 
 const getIngridients = () => {
@@ -30,11 +25,12 @@ const getIngridients = () => {
 
 const renderListOfIngridients = (list, onClick) =>
 	list.map((item, key) =>
-		<Checkbox
-			label={item}
-			onChange={onClick}
+		<Link
+			onClick={onClick}
 			key={key}
-		/>
+		>
+			{item}
+		</Link>
 	)
 
 const ingridients = getIngridients(list)
@@ -51,7 +47,7 @@ const mapDispatchToProps = dispatch => ({
 @connect(mapStateToProps, mapDispatchToProps)
 export default class App extends PureComponent {
 	render() {
-		console.log(this.props)
+		// console.log(this.props)
 
 		return (
 			<div>
