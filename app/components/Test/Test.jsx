@@ -1,11 +1,7 @@
 import React, { PureComponent } from 'react'
 import { func, node } from 'prop-types'
 import noop from 'noop3'
-import bem from 'bem-cn'
-
-const b = bem('test')
-
-import './Test.css'
+import s from './Test.css'
 
 export default class Test extends PureComponent {
 	static propTypes = {
@@ -22,7 +18,7 @@ export default class Test extends PureComponent {
 		const { children } = this.props
 
 		return (
-          <div className={b}>{children}</div>
+          <div className={s.test}>{children}</div>
 		)
 	}
 }

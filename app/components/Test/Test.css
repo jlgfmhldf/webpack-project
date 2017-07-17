@@ -3,15 +3,17 @@
 
 @media screen and (max-width: 768px) {
   .test {
-    background: goldenrod;
+    background: blueviolet;
+    color: #fff;
   }
 }
 
 .test {
-  background: var(--white);
+  background: aquamarine;
   size: 50px 70px;
   padding: 20px;
   font-family: 'Open Sans';
+  font-size: 5em;
 }
 
 
