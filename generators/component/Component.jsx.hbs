@@ -8,12 +8,8 @@ import {
 	node,
 } from 'prop-types'
 import noop from 'noop3'
-import bem from 'bem-cn'
 
-import './{{ properCase name }}.css'
-
-const b = bem('test')
-
+import s from './{{ properCase name }}.css'
 
 export default class {{ properCase name }} extends PureComponent {
 	static propTypes = {
@@ -28,7 +24,7 @@ export default class {{ properCase name }} extends PureComponent {
 		// const {  } = this.props
 
 		return (
-			<div className={cx('{{ camelCase name }}')}>
+			<div className={ s.{{ properCase name }} }>
 				{{ properCase name }}
 			</div>
 		)

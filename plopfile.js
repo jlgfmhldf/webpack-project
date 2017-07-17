@@ -1,4 +1,3 @@
 module.exports = function (plop) {
-	// create your generators here
-	plop.setGenerator('component', )
+	plop.setGenerator('component', require('./generators/component/index'))
 }
