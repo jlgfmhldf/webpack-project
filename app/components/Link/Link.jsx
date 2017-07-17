@@ -4,10 +4,7 @@ import noop from 'noop3'
 import {
 	Link as ToolboxLink,
 } from 'react-toolbox'
-import bem from 'bem-cn'
-import './Link.css'
-
-const b = bem('Link')
+import s from './Link.css'
 
 export default class Link extends PureComponent {
 	static propTypes = {
@@ -27,7 +24,7 @@ export default class Link extends PureComponent {
 			onClick,
 		} = this.props
 
-		return <div className={b}>
+		return <div className={s.Link}>
 			<ToolboxLink
 				label={children}
 				icon={iconName}
