@@ -41,7 +41,7 @@ module.exports = {
 		{
 			type: 'add',
 			path: `./app/components/{{properCase name}}/{{properCase name}}.stories.js`,
-			templateFile: './Component.story.js.hbs',
+			templateFile: './Component.stories.js.hbs',
 			abortOnFail: true,
 		},
 		// {
