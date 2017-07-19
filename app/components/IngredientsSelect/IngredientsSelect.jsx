@@ -14,19 +14,20 @@ export default class IngredientsSelect extends PureComponent {
 	static propTypes = {
 		value: array,
 		list: array,
-		onSearch: func,
+		onSelect: func,
 	}
 
 	static defaultProps = {
+		value: [],
 		list: [],
-		onSearch: noop,
+		onSelect: noop,
 	}
 
 	render() {
 		const {
 			value,
 			list,
-			onSearch,
+			onSelect,
 		} = this.props
 
 		return (
@@ -38,7 +39,7 @@ export default class IngredientsSelect extends PureComponent {
 					name='IngredientsSearch'
 					label='Найти ингридиент'
 					hint='Введите название продукта'
-					onChange={onSearch}
+					onChange={onSelect}
 				/>
 			</div>
 		)

@@ -8,7 +8,7 @@ import {
 	Button,
 } from 'react-toolbox'
 import SmoothiesCard from '../../components/SmoothiesCard'
-import Link from '../../components/Link'
+import IngredientsSelect from '../../components/IngredientsSelect'
 import list from '../../../data/list.json'
 
 const getIngridients = () => {
@@ -22,16 +22,6 @@ const getIngridients = () => {
 
 	return uniq(arrayOfIngridients)
 }
-
-const renderListOfIngridients = (list, onClick) =>
-	list.map((item, key) =>
-		<Link
-			onClick={onClick}
-			key={key}
-		>
-			{item}
-		</Link>
-	)
 
 const ingridients = getIngridients(list)
 
@@ -58,8 +48,9 @@ export default class App extends PureComponent {
 						<p>
 							Выберите продукты, которые есть у вас в холодильнике:
 						</p>
-						{renderListOfIngridients(ingridients)}
-
+						<IngredientsSelect
+							list={ingridients}
+						/>
 						<Button label='Далее' raised primary/>
 						<h2>
 							Результаты поиска:
