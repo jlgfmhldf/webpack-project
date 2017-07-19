@@ -1,18 +1,12 @@
 import React from 'react'
-import { storiesOf } from '@storybook/react'
-import { withKnobs } from '@storybook/addon-knobs'
+import { storiesOf, action } from '@storybook/react'
+import { withKnobs, text } from '@storybook/addon-knobs'
 import IngredientsSelect from './'
+import list from './list.mock'
 
-const list = [
-	'Яблого',
-	'Груша',
-	'Абрикос',
-	'Киви',
-	'Молоко',
-	'Кефир',
-	'Соль',
-	'Сахар',
-]
+const knobs = () => ({
+	value: text('Value', ''),
+})
 
 storiesOf('IngredientsSelect', module)
 	.addDecorator(withKnobs)
@@ -21,6 +15,10 @@ storiesOf('IngredientsSelect', module)
 	))
 	.add('Data', () => (
 		<IngredientsSelect
+			{...knobs()}
 			list={list}
+			onSearch={action('search')}
+			onSelect={action('select')}
+			onShowMore={action('show more')}
 		/>
 	))
