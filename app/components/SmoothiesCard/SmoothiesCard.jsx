@@ -41,7 +41,7 @@ export default class SmoothiesCard extends PureComponent {
 					aspectRatio="wide"
 					image={image}
 				/>
-				<CardText>{description}</CardText>
+				{description && <CardText>{description}</CardText>}
 				<Button
 					label="Выбрать"
 					onClick={onView}

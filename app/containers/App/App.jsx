@@ -9,9 +9,11 @@ import {
 	Panel,
 	AppBar,
 	Button,
+	Input,
 } from 'react-toolbox'
 import SmoothiesCard from '../../components/SmoothiesCard'
 import IngredientsSelect from '../../components/IngredientsSelect'
+import SmoothiesList from '../../components/SmoothiesList'
 import s from './App.css'
 
 export default class App extends PureComponent {
@@ -51,18 +53,17 @@ export default class App extends PureComponent {
 							list={ingredients}
 							onSelect={selectIngredients}
 						/>
+						<div style={{ width: 300 }}>
+							<Input
+								defaultValue={250}
+								label='Введите желаемую калорийность'
+							/>
+						</div>
 						<h2>
 							Результаты поиска / Все смузи:
 
 						</h2>
-						<div style={{ width: '25%'}}>
-							<SmoothiesCard
-								title='Тест'
-								subtitle='Подзаголовок лалала'
-								image='https://placeimg.com/800/450/nature'
-								description={`Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type `}
-							/>
-						</div>
+						<SmoothiesList list={list} />
 					</Panel>
 				</Layout>
 			</div>
