@@ -3,7 +3,7 @@ import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import { createStore, renderDevTools } from './utils/devTools'
 import reducer from './reducers'
-import AppContainer from './containers/App/App'
+import AppContainer from './containers/App'
 import './styles/index.css'
 
 const store = createStore(reducer)

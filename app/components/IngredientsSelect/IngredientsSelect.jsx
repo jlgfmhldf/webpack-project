@@ -37,7 +37,7 @@ export default class IngredientsSelect extends PureComponent {
 					source={list}
 					type='search'
 					name='IngredientsSearch'
-					label='Найти ингридиент'
+					label='Найти ингрeдиент'
 					hint='Введите название продукта'
 					onChange={onSelect}
 				/>

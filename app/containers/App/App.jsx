@@ -1,6 +1,9 @@
 import React, { PureComponent } from 'react'
-import { uniq } from 'ramda'
-import { connect } from 'react-redux'
+import {
+	func,
+	array,
+} from 'prop-types'
+import noop from 'noop3'
 import {
 	Layout,
 	Panel,
@@ -9,51 +12,47 @@ import {
 } from 'react-toolbox'
 import SmoothiesCard from '../../components/SmoothiesCard'
 import IngredientsSelect from '../../components/IngredientsSelect'
-import list from '../../../data/list.json'
+import s from './App.css'
 
-const getIngridients = () => {
-	let arrayOfIngridients = []
-
-	list.forEach(item => {
-		const ingridients = Object.keys(item.ingridients)
-
-		Array.prototype.push.apply(arrayOfIngridients, ingridients)
-	})
-
-	return uniq(arrayOfIngridients)
-}
-
-const ingridients = getIngridients(list)
-
-/* eslint-disable no-unused-vars */
-const mapStateToProps = state => ({
-
-})
-
-const mapDispatchToProps = dispatch => ({
-
-})
-
-@connect(mapStateToProps, mapDispatchToProps)
 export default class App extends PureComponent {
+	static propTypes = {
+		selectIngredients: func,
+		list: array,
+		ingredients: array,
+		selectedIngredients: array,
+	}
+
+	static defaultProps = {
+		selectIngredients: noop,
+		ingredients: [],
+		list: [],
+		selectedIngredients: [],
+	}
+
 	render() {
-		// console.log(this.props)
+		const {
+			ingredients,
+			list,
+			selectedIngredients,
+			selectIngredients,
+		} = this.props
+
+		console.log(this.props)
 
 		return (
-			<div>
+			<div className={s.App}>
 				<Layout>
 					<Panel>
-						<AppBar leftIcon='menu' />
-
 						<p>
 							Выберите продукты, которые есть у вас в холодильнике:
 						</p>
 						<IngredientsSelect
-							list={ingridients}
+							value={selectedIngredients}
+							list={ingredients}
+							onSelect={selectIngredients}
 						/>
-						<Button label='Далее' raised primary/>
 						<h2>
-							Результаты поиска:
+							Результаты поиска / Все смузи:
 
 						</h2>
 						<div style={{ width: '25%'}}>
