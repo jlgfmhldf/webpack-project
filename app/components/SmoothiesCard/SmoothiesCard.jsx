@@ -59,7 +59,7 @@ export default class SmoothiesCard extends PureComponent {
 				/>
 				{description && <CardText>{description}</CardText>}
 				<Button
-					label="Выбрать"
+					label="Приготовить"
 					onClick={onView}
 					raised
 					accent

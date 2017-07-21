@@ -18,7 +18,7 @@ import s from './App.css'
 export default class App extends PureComponent {
 	static propTypes = {
 		selectIngredients: func,
-		list: array,
+		allSmoothies: array,
 		ingredients: array,
 		selectedIngredients: array,
 	}
@@ -26,17 +26,22 @@ export default class App extends PureComponent {
 	static defaultProps = {
 		selectIngredients: noop,
 		ingredients: [],
-		list: [],
+		allSmoothies: [],
 		selectedIngredients: [],
 	}
 
 	render() {
 		const {
 			ingredients,
-			list,
+			allSmoothies,
+			findedSmoothies,
 			selectedIngredients,
 			selectIngredients,
 		} = this.props
+
+		const findedSmoothiesLength = !!findedSmoothies.length
+
+		const smoothiesItems = findedSmoothiesLength && findedSmoothies || allSmoothies
 
 		return (
 			<div className={s.App}>
@@ -57,10 +62,10 @@ export default class App extends PureComponent {
 							/>
 						</div>
 						<h2>
-							Результаты поиска / Все смузи:
-
+							{findedSmoothiesLength && 'Результаты поиска'}
+							{!findedSmoothiesLength && 'Все смузи'}
 						</h2>
-						<SmoothiesList list={list} />
+						<SmoothiesList list={smoothiesItems} />
 					</Panel>
 				</Layout>
 			</div>

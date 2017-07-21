@@ -11,7 +11,7 @@ const getIngredients = () => {
 	let arrayOfIngridients = []
 
 	list.forEach(item => {
-		const ingridients = Object.keys(item.ingridients)
+		const ingridients = item.ingridients
 
 		Array.prototype.push.apply(arrayOfIngridients, ingridients)
 	})
@@ -29,6 +29,8 @@ const mapStateToProps = state => ({
 	ingredients: getIngredients(list),
 	list,
 	selectedIngredients: state.selectedIngredients,
+	allSmoothies: state.allSmoothies,
+	findedSmoothies: state.findedSmoothies,
 	state,
 })
 

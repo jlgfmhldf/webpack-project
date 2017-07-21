@@ -1,5 +1,9 @@
+import allSmoothies from '../../data/list.json'
+
 const defaultState = {
 	selectedIngredients: [],
+	findedSmoothies: [],
+	allSmoothies,
 }
 
 import {
