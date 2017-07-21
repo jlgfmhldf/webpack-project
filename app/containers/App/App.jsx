@@ -11,7 +11,6 @@ import {
 	Button,
 	Input,
 } from 'react-toolbox'
-import SmoothiesCard from '../../components/SmoothiesCard'
 import IngredientsSelect from '../../components/IngredientsSelect'
 import SmoothiesList from '../../components/SmoothiesList'
 import s from './App.css'
@@ -38,8 +37,6 @@ export default class App extends PureComponent {
 			selectedIngredients,
 			selectIngredients,
 		} = this.props
-
-		console.log(this.props)
 
 		return (
 			<div className={s.App}>

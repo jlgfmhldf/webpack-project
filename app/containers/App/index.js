@@ -16,7 +16,13 @@ const getIngredients = () => {
 		Array.prototype.push.apply(arrayOfIngridients, ingridients)
 	})
 
-	return uniq(arrayOfIngridients)
+	return uniq(arrayOfIngridients).sort(sortByAlphabet)
+}
+
+const sortByAlphabet = (a, b) => {
+	if(a < b) return -1
+	if(a > b) return 1
+	return 0
 }
 
 const mapStateToProps = state => ({

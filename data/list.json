@@ -17,46 +17,37 @@
       "Авокадо": "½ штуки",
       "Лед": "150 г"
     },
-    "cooking": "Возьмем кошачью жопу..."
+    "link": "https://eda.ru/recepty/napitki/zelenyy-smuzi-so-shpinatom-i-ananasom-80081",
+    "image": "https://s1.afisha-eda.ru/StaticContent/Photos/151012151127/160816182714/p_O.jpg"
   },
   {
-    "title": "Зеленый смузи со шпинатом и ананасом",
+    "title": "Сытный завтрак",
     "nutrition_value": {
-      "calories": 318,
-      "proteins": 3.9,
-      "fats": 13.8,
-      "carbohydrates": 43.6
+      "calories": 98
     },
     "ingridients": {
-      "Яблоки": 2,
-      "Шпинат": "50 г",
-      "Стебель сельдерея": "½ штуки",
-      "Огурцы": "½ штуки",
-      "Лайм": "½ штуки",
-      "Ананас": "½ штуки",
-      "Авокадо": "½ штуки",
-      "Лед": "150 г"
+      "Клубника": 2,
+      "Банан": "50 г",
+      "Кефир": "½ штуки",
+      "Овсяные хлопья": "½ штуки"
     },
-    "cooking": "Возьмем кошачью жопу..."
+    "link": "http://vesvnorme.net/zdorovoe-pitanie/smuzi-dlja-pohudenija.html"
   },
   {
-    "title": "Зеленый смузи со шпинатом и ананасом",
+    "title": "Смузи фруктовый",
     "nutrition_value": {
-      "calories": 318,
-      "proteins": 3.9,
-      "fats": 13.8,
-      "carbohydrates": 43.6
+      "calories": 89,
+      "proteins": 0.9,
+      "fats": 0.3,
+      "carbohydrates": 21
     },
     "ingridients": {
-      "Яблоки": 2,
-      "Шпинат": "50 г",
-      "Стебель сельдерея": "½ штуки",
-      "Огурцы": "½ штуки",
-      "Лайм": "½ штуки",
-      "Ананас": "½ штуки",
-      "Авокадо": "½ штуки",
-      "Лед": "150 г"
+      "Банан": 2,
+      "Киви": "50 г",
+      "Гранат": "½ штуки",
+      "Хурма": "½ штуки"
     },
-    "cooking": "Возьмем кошачью жопу..."
+    "link": "http://www.calorizator.ru/recipe/3861",
+    "image": "http://www.calorizator.ru/sites/default/files/imagecache/recipes_full/recipe/3861.jpg"
   }
 ]

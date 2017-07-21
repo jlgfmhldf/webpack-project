@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react'
-import { string, func } from 'prop-types'
+import { number, string, func } from 'prop-types'
 import noop from 'noop3'
 import {
 	Card,
@@ -16,6 +16,11 @@ export default class SmoothiesCard extends PureComponent {
 		subtitle: string,
 		image: string,
 		description: string,
+		calories: number,
+		carbohydrates: number,
+		proteins: number,
+		fats: number,
+		link: string,
 		onView: func,
 	}
 
@@ -26,16 +31,27 @@ export default class SmoothiesCard extends PureComponent {
 	render() {
 		const {
 			title,
-			subtitle,
 			image,
 			description,
+			calories,
+			carbohydrates,
+			proteins,
+			fats,
+			link,
 			onView,
 		} = this.props
+
+		const subtitle = []
+
+		proteins && subtitle.push(`Белки: ${proteins}`)
+		fats && subtitle.push(`Жиры: ${fats}`)
+		carbohydrates && subtitle.push(`Углеводы: ${carbohydrates}`)
+
 		return (
 			<Card>
 				<CardTitle
-					title={title}
-					subtitle={subtitle}
+					title={title + ` (${calories})`}
+					subtitle={subtitle.join(' / ')}
 				/>
 				<CardMedia
 					aspectRatio="wide"
@@ -47,9 +63,10 @@ export default class SmoothiesCard extends PureComponent {
 					onClick={onView}
 					raised
 					accent
+					href={link}
+					target='_blank'
 					styles={{
 						width: '100%',
-						height: 60,
 					}}
 				/>
 			</Card>

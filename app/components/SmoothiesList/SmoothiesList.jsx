@@ -27,17 +27,23 @@ export default class SmoothiesList extends PureComponent {
 			carbohydrates,
 			proteins,
 			fats,
-		}
+			calories,
+		},
+		image,
+		link,
 	}, key) => {
-		const description = `Белки: ${proteins} / Жиры: ${fats} / Углеводы: ${carbohydrates}`
 		return <div
 			className={s.item}
 			key={key}
 		>
 			<SmoothiesCard
 				title={title}
-				subtitle={description}
-				image={`https://placeimg.com/800/450/nature?${key}`} //TODO
+				proteins={proteins}
+				fats={fats}
+				carbohydrates={carbohydrates}
+				calories={calories}
+				image={image || `https://placeimg.com/800/450/nature?${key}`} //TODO
+				link={link}
 			/>
 		</div>
 	}
