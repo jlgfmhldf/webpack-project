@@ -2,6 +2,7 @@ import allSmoothies from '../../data/list.json'
 import {
 	SELECT_INGREDIENTS,
 	CHANGE_CALORIES_VALUE,
+	UPDATE_SMOOTHIES_LIST,
 } from '../constants/actions'
 
 function arrayContainsArray (superset, subset) {
@@ -39,9 +40,15 @@ const defaultState = {
 export default function (state = defaultState, { type, payload }) {
 	switch (type) {
 
-	case SELECT_INGREDIENTS: {
-		const { ingredients } = payload
-		const { calories } = state
+	case UPDATE_SMOOTHIES_LIST: {
+		const { ingredients, calories } = payload
+
+		if (!ingredients.length) {
+			return {
+				...state,
+				smoothies: allSmoothies,
+			}
+		}
 
 		let smoothies = findSmoothies(ingredients)
 
@@ -51,13 +58,20 @@ export default function (state = defaultState, { type, payload }) {
 
 		return {
 			...state,
-			selectedIngredients: ingredients,
 			smoothies,
 		}
 	}
 
+	case SELECT_INGREDIENTS: {
+		const { ingredients } = payload
+
+		return {
+			...state,
+			selectedIngredients: ingredients,
+		}
+	}
+
 	case CHANGE_CALORIES_VALUE: {
-		console.log(payload.value)
 		return {
 			...state,
 			calories: payload.value,

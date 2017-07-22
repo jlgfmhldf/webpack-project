@@ -6,6 +6,7 @@ import App from './App'
 import {
 	selectIngredients,
 	changeCaloriesValue,
+	updateSmoothiesList,
 } from '../../actions/'
 
 const getIngredients = () => {
@@ -34,7 +35,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
 	selectIngredients: values => dispatch(selectIngredients(values)),
-	changeCaloriesValue: value => dispatch(changeCaloriesValue(value))
+	changeCaloriesValue: value => dispatch(changeCaloriesValue(value)),
+	updateSmoothiesList: (ingredients, calories) => dispatch(updateSmoothiesList(ingredients, calories)),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(App)
