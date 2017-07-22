@@ -1,5 +1,6 @@
 import {
 	SELECT_INGREDIENTS,
+	CHANGE_CALORIES_VALUE,
 } from '../constants/actions'
 
 export const selectIngredients = ingredients => ({
@@ -7,4 +8,11 @@ export const selectIngredients = ingredients => ({
 	payload: {
 		ingredients,
 	}
+})
+
+export const changeCaloriesValue = value => ({
+	type: CHANGE_CALORIES_VALUE,
+	payload: {
+		value,
+	},
 })
