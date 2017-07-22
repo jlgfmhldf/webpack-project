@@ -17,6 +17,7 @@
   },
   "pre-commit": "lint:changed",
   "dependencies": {
+    "alpha-sort": "^2.0.1",
     "noop3": "^999.999.999",
     "prop-types": "^15.5.8",
     "ramda": "^0.24.1",

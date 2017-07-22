@@ -23,6 +23,7 @@ export default class App extends PureComponent {
 		selectIngredients: func,
 		changeCaloriesValue: func,
 		updateSmoothiesList: func,
+		findIngredient: func,
 	}
 
 	static defaultProps = {
@@ -32,6 +33,7 @@ export default class App extends PureComponent {
 		selectIngredients: noop,
 		changeCaloriesValue: noop,
 		updateSmoothiesList: noop,
+		findIngredient: noop,
 	}
 
 	handleSelectIngredients = ingredients => {
@@ -63,12 +65,11 @@ export default class App extends PureComponent {
 			smoothies,
 			selectedIngredients,
 			changeCaloriesValue,
+			findIngredient,
 		} = this.props
 
 		const smoothiesLength = !!smoothies.length
 		const selectedIngredientsLength = !!selectedIngredients.length
-
-		console.log(calories)
 
 		return (
 			<div className={s.App}>
@@ -85,11 +86,12 @@ export default class App extends PureComponent {
 						/>
 						<div style={{ width: 300 }}>
 							<Input
-								defaultValue={100}
+								type='number'
 								value={calories}
 								label='Введите желаемую калорийность'
 								maxLength={3}
 								onChange={this.handleChangeCaloriesValue}
+								onInput={findIngredient}
 							/>
 						</div>
 						<h2>

@@ -1,6 +1,7 @@
 import allSmoothies from '../../data/list.json'
 import {
 	SELECT_INGREDIENTS,
+	FIND_INGREDIENT,
 	CHANGE_CALORIES_VALUE,
 	UPDATE_SMOOTHIES_LIST,
 } from '../constants/actions'
@@ -33,7 +34,9 @@ const filterByCalories = calories =>
 const defaultState = {
 	selectedIngredients: [],
 	smoothies: allSmoothies,
+	ingredients: null,
 	calories: undefined,
+	ingridientIsNotFound: false,
 }
 
 /* eslint-disable no-unused-vars */
@@ -68,6 +71,16 @@ export default function (state = defaultState, { type, payload }) {
 		return {
 			...state,
 			selectedIngredients: ingredients,
+		}
+	}
+
+
+	case FIND_INGREDIENT: {
+		const { value } = payload
+
+		return {
+			...state,
+			ingridientIsNotFound: false, //TODO
 		}
 	}
 
