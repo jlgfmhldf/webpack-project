@@ -45,6 +45,7 @@ export default class App extends PureComponent {
 			<div className={s.App}>
 				<Layout>
 					<Panel>
+						<h1 className={s.h1}>MAKE YOUR SMOOTHIE</h1>
 						<p>
 							Выберите продукты, которые есть у вас в холодильнике:
 						</p>
@@ -57,7 +58,7 @@ export default class App extends PureComponent {
 							<Input
 								defaultValue={250}
 								label='Введите желаемую калорийность'
-							/>§
+							/>
 						</div>
 						<h2>
 							{smoothiesLength && selectedIngredientsLength && 'Результаты поиска'}
