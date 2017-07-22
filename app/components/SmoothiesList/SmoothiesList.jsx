@@ -1,13 +1,7 @@
 import React, { PureComponent } from 'react'
 import {
-	string,
-	number,
-	bool,
 	array,
-	func,
-	node,
 } from 'prop-types'
-import noop from 'noop3'
 import SmoothiesCard from '../SmoothiesCard'
 
 import s from './SmoothiesList.css'

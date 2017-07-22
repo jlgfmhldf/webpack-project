@@ -7,8 +7,8 @@
       "fats": 13.8,
       "carbohydrates": 43.6
     },
-    "ingridients": [
-      "Яблоки",
+    "ingredients": [
+      "Яблоко",
       "Шпинат",
       "Стебель сельдерея",
       "Огурцы",
@@ -25,7 +25,7 @@
     "nutrition_value": {
       "calories": 98
     },
-    "ingridients": [
+    "ingredients": [
       "Клубника",
       "Банан",
       "Кефир",
@@ -41,7 +41,7 @@
       "fats": 0.3,
       "carbohydrates": 21
     },
-    "ingridients": [
+    "ingredients": [
       "Банан",
       "Киви",
       "Гранат",
@@ -58,7 +58,7 @@
       "fats": 0.9,
       "carbohydrates": 10
     },
-    "ingridients": [
+    "ingredients": [
       "Клубника",
       "Йогурт",
       "Сахар",
@@ -76,7 +76,7 @@
       "fats": 1.1,
       "carbohydrates": 10
     },
-    "ingridients": [
+    "ingredients": [
       "Персики",
       "Йогурт персиковый",
       "Молоко"
@@ -92,7 +92,7 @@
       "fats": 1.6,
       "carbohydrates": 10
     },
-    "ingridients": [
+    "ingredients": [
       "Яблоко",
       "Корица",
       "Молоко"

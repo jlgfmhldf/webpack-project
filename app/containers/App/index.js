@@ -8,15 +8,14 @@ import {
 } from '../../actions/'
 
 const getIngredients = () => {
-	let arrayOfIngridients = []
+	let arrayOfIngredients = []
 
-	list.forEach(item => {
-		const ingridients = item.ingridients
+	list.forEach(({ ingredients }) => {
 
-		Array.prototype.push.apply(arrayOfIngridients, ingridients)
+		Array.prototype.push.apply(arrayOfIngredients, ingredients)
 	})
 
-	return uniq(arrayOfIngridients).sort(sortByAlphabet)
+	return uniq(arrayOfIngredients).sort(sortByAlphabet)
 }
 
 const sortByAlphabet = (a, b) => {
@@ -27,11 +26,8 @@ const sortByAlphabet = (a, b) => {
 
 const mapStateToProps = state => ({
 	ingredients: getIngredients(list),
-	list,
 	selectedIngredients: state.selectedIngredients,
-	allSmoothies: state.allSmoothies,
-	findedSmoothies: state.findedSmoothies,
-	state,
+	smoothies: state.smoothies,
 })
 
 const mapDispatchToProps = dispatch => ({

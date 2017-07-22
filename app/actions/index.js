@@ -1,5 +1,5 @@
 import {
-	SELECT_INGREDIENTS
+	SELECT_INGREDIENTS,
 } from '../constants/actions'
 
 export const selectIngredients = ingredients => ({

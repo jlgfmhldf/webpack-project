@@ -7,8 +7,6 @@ import noop from 'noop3'
 import {
 	Layout,
 	Panel,
-	AppBar,
-	Button,
 	Input,
 } from 'react-toolbox'
 import IngredientsSelect from '../../components/IngredientsSelect'
@@ -17,31 +15,31 @@ import s from './App.css'
 
 export default class App extends PureComponent {
 	static propTypes = {
-		selectIngredients: func,
-		allSmoothies: array,
+		smoothies: array,
 		ingredients: array,
 		selectedIngredients: array,
+		selectIngredients: func,
 	}
 
 	static defaultProps = {
-		selectIngredients: noop,
 		ingredients: [],
-		allSmoothies: [],
+		smoothies: [],
 		selectedIngredients: [],
+		selectIngredients: noop,
 	}
 
 	render() {
 		const {
 			ingredients,
-			allSmoothies,
-			findedSmoothies,
+			smoothies,
 			selectedIngredients,
 			selectIngredients,
 		} = this.props
 
-		const findedSmoothiesLength = !!findedSmoothies.length
+		const smoothiesLength = !!smoothies.length
+		const selectedIngredientsLength = !!selectedIngredients.length
 
-		const smoothiesItems = findedSmoothiesLength && findedSmoothies || allSmoothies
+		console.log(this.props)
 
 		return (
 			<div className={s.App}>
@@ -59,13 +57,14 @@ export default class App extends PureComponent {
 							<Input
 								defaultValue={250}
 								label='Введите желаемую калорийность'
-							/>
+							/>§
 						</div>
 						<h2>
-							{findedSmoothiesLength && 'Результаты поиска'}
-							{!findedSmoothiesLength && 'Все смузи'}
+							{smoothiesLength && selectedIngredientsLength && 'Результаты поиска'}
+							{smoothiesLength && !selectedIngredientsLength && 'Все смузи'}
+							{!smoothiesLength && selectedIngredientsLength && 'Ничего не найдено'}
 						</h2>
-						<SmoothiesList list={smoothiesItems} />
+						<SmoothiesList list={smoothies} />
 					</Panel>
 				</Layout>
 			</div>
