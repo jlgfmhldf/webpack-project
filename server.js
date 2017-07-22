@@ -8,10 +8,9 @@ const port = 3000
 
 const compiler = webpack(config)
 app.use(webpackDevMiddleware(compiler, {
-	noInfo: true,
+	noInfo: false,
 	publicPath: config.output.publicPath
 }))
-app.use(webpackHotMiddleware(compiler))
 
 app.get("/", function(req, res) {
 	res.sendFile(`${__dirname}/public/index.html`)
