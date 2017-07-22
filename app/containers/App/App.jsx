@@ -64,7 +64,6 @@ export default class App extends PureComponent {
 			ingredients,
 			smoothies,
 			selectedIngredients,
-			changeCaloriesValue,
 			findIngredient,
 		} = this.props
 
