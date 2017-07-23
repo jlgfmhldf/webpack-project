@@ -15,6 +15,7 @@ export default class IngredientsSelect extends PureComponent {
 		value: array,
 		list: array,
 		onSelect: func,
+		onInput: func,
 	}
 
 	static defaultProps = {
@@ -28,6 +29,7 @@ export default class IngredientsSelect extends PureComponent {
 			value,
 			list,
 			onSelect,
+			onInput,
 		} = this.props
 
 		return (
@@ -40,6 +42,7 @@ export default class IngredientsSelect extends PureComponent {
 					label='Найти ингрeдиент'
 					hint='Введите название продукта'
 					onChange={onSelect}
+					onQueryChange={onInput}
 				/>
 			</div>
 		)

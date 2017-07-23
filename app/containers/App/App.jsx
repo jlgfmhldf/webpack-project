@@ -1,14 +1,17 @@
 import React, { PureComponent } from 'react'
 import {
+	string,
 	number,
 	func,
 	array,
+	bool,
 } from 'prop-types'
 import noop from 'noop3'
 import {
 	Layout,
 	Panel,
 	Input,
+	Snackbar,
 } from 'react-toolbox'
 import IngredientsSelect from '../../components/IngredientsSelect'
 import SmoothiesList from '../../components/SmoothiesList'
@@ -16,14 +19,18 @@ import s from './App.css'
 
 export default class App extends PureComponent {
 	static propTypes = {
+		snackbarText: string,
 		calories: number,
 		smoothies: array,
 		ingredients: array,
 		selectedIngredients: array,
+		isShowSnackbar: bool,
 		selectIngredients: func,
 		changeCaloriesValue: func,
 		updateSmoothiesList: func,
 		findIngredient: func,
+		showSnackBar: func,
+		hideSnackBar: func,
 	}
 
 	static defaultProps = {
@@ -34,6 +41,8 @@ export default class App extends PureComponent {
 		changeCaloriesValue: noop,
 		updateSmoothiesList: noop,
 		findIngredient: noop,
+		showSnackBar: noop,
+		hideSnackBar: noop,
 	}
 
 	handleSelectIngredients = ingredients => {
@@ -60,11 +69,14 @@ export default class App extends PureComponent {
 
 	render() {
 		const {
+			snackbarText,
 			calories,
 			ingredients,
 			smoothies,
+			isShowSnackbar,
 			selectedIngredients,
 			findIngredient,
+			hideSnackBar,
 		} = this.props
 
 		const smoothiesLength = !!smoothies.length
@@ -82,6 +94,7 @@ export default class App extends PureComponent {
 							value={selectedIngredients}
 							list={ingredients}
 							onSelect={this.handleSelectIngredients}
+							onInput={findIngredient}
 						/>
 						<div style={{ width: 300 }}>
 							<Input
@@ -90,7 +103,6 @@ export default class App extends PureComponent {
 								label='Введите желаемую калорийность'
 								maxLength={3}
 								onChange={this.handleChangeCaloriesValue}
-								onInput={findIngredient}
 							/>
 						</div>
 						<h2>
@@ -101,6 +113,15 @@ export default class App extends PureComponent {
 						<SmoothiesList list={smoothies} />
 					</Panel>
 				</Layout>
+				<Snackbar
+					action='Dismiss'
+					active={isShowSnackbar}
+					label={snackbarText}
+					timeout={1000}
+					onTimeout={hideSnackBar}
+					onClick={hideSnackBar}
+					type='warning'
+				/>
 			</div>
 		)
 	}

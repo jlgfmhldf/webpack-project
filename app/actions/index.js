@@ -3,6 +3,8 @@ import {
 	FIND_INGREDIENT,
 	CHANGE_CALORIES_VALUE,
 	UPDATE_SMOOTHIES_LIST,
+	SHOW_SNACKBAR,
+	HIDE_SNACKBAR,
 } from '../constants/actions'
 
 export const updateSmoothiesList = (ingredients, calories) => ({
@@ -32,4 +34,16 @@ export const findIngredient = value => ({
 	payload: {
 		value,
 	}
+})
+
+//TODO
+export const showShackBarAction = text => ({
+	type: SHOW_SNACKBAR,
+	payload: {
+		text,
+	}
+})
+
+export const hideSnackBarAction = () => ({
+	type: HIDE_SNACKBAR,
 })
