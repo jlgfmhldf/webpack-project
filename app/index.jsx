@@ -1,12 +1,11 @@
 import React, { PureComponent } from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
-import { createStore, renderDevTools } from './utils/devTools'
-import reducer from './reducers'
+import configureStore from './store/configureStore'
 import AppContainer from './containers/App/App'
 import './styles/index.css'
 
-const store = createStore(reducer)
+const store = configureStore()
 
 export default class App extends PureComponent {
 	render() {
@@ -14,7 +13,6 @@ export default class App extends PureComponent {
 			<Provider store={store}>
 				<AppContainer />
 			</Provider>
-			{renderDevTools(store)}
         </div>
 	}
 }
