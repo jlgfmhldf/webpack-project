@@ -7,6 +7,7 @@ import {
 	updateSmoothiesList,
 	findIngredient,
 	hideSnackBarAction,
+	loadSmoothiesList,
 } from '../../actions/'
 
 const mapStateToProps = state => ({
@@ -23,7 +24,8 @@ const mapDispatchToProps = dispatch => ({
 	changeCaloriesValue: value => dispatch(changeCaloriesValue(value)),
 	updateSmoothiesList: (ingredients, calories) => dispatch(updateSmoothiesList(ingredients, calories)),
 	findIngredient: value => dispatch(findIngredient(value)),
-	hideSnackBar: () => dispatch(hideSnackBarAction())
+	hideSnackBar: () => dispatch(hideSnackBarAction()),
+	loadSmoothiesList,
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(App)

@@ -5,6 +5,9 @@ import {
 	UPDATE_SMOOTHIES_LIST,
 	SHOW_SNACKBAR,
 	HIDE_SNACKBAR,
+	LOAD_SMOOTHIES_LIST,
+	LOAD_SMOOTHIES_LIST_SUCCESS,
+	LOAD_SMOOTHIES_LIST_ERROR,
 } from '../constants/actions'
 
 export const updateSmoothiesList = (ingredients, calories) => ({
@@ -47,3 +50,29 @@ export const showShackBarAction = text => ({
 export const hideSnackBarAction = () => ({
 	type: HIDE_SNACKBAR,
 })
+
+const requestLoadSmoothiesList = () => ({
+	type: LOAD_SMOOTHIES_LIST,
+})
+
+const successLoadSmoothiesList = list => ({
+	type: LOAD_SMOOTHIES_LIST_SUCCESS,
+	payload: {
+		list,
+	}
+})
+
+const errorLoadSmoothiesList = error => ({
+	type: LOAD_SMOOTHIES_LIST_ERROR,
+	payload: {
+		error,
+	}
+})
+
+export const loadSmoothiesList = () => ({ dispatch }) => {
+	dispatch(requestLoadSmoothiesList())
+
+	fetch('../../data/list.json')
+		.then(list => dispatch(successLoadSmoothiesList(list)))
+		.catch(error => dispatch(errorLoadSmoothiesList(error)))
+}

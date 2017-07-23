@@ -45,6 +45,11 @@ export default class App extends PureComponent {
 		hideSnackBar: noop,
 	}
 
+	componentWillMount() {
+		console.log(this.props)
+		this.props.loadSmoothiesList()
+	}
+
 	handleSelectIngredients = ingredients => {
 		const {
 			calories,
