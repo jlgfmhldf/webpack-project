@@ -27,7 +27,9 @@
     "react-redux": "^5.0.5",
     "react-toolbox": "^2.0.0-beta.12",
     "redux": "^3.7.0",
-    "redux-devtools": "^3.4.0"
+    "redux-devtools": "^3.4.0",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.2.0"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^3.1.2",
@@ -44,6 +46,7 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "babel-runtime": "^6.23.0",
+    "babili-webpack-plugin": "^0.1.2",
     "css-loader": "^0.28.0",
     "css-mqpacker": "^6.0.1",
     "cssnano": "^3.10.0",
