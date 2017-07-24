@@ -13,7 +13,7 @@ module.exports = {
 	entry: [
 		'./app/index.jsx',
 		'webpack-hot-middleware/client',
-		'babel-polyfill',
+		// 'babel-polyfill',
 	],
 	output: {
 		path: path.join(__dirname, 'public'),
@@ -92,15 +92,9 @@ module.exports = {
 }
 
 if (NODE_ENV === 'production') {
+	const BabiliPlugin = require("babili-webpack-plugin");
+
 	module.exports.plugins.push(
-		new webpack.optimize.UglifyJsPlugin(
-			{
-				compress: {
-					warnings: false,
-					drop_console: true,
-					unsafe: true,
-				}
-			}
-		)
+		new BabiliPlugin()
 	)
 }
