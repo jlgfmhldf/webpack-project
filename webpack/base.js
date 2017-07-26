@@ -10,14 +10,15 @@ const isDevelopment = NODE_ENV === 'development'
 const isProd = NODE_ENV === 'production'
 const { stringify } = JSON
 
+const babelRcPath = path.join(__dirname, '../.babelrc')
+
 module.exports = {
 	entry: [
-		'./app/index.jsx',
-		// 'webpack-hot-middleware/client',
-		// 'babel-polyfill',
+		'babel-polyfill',
+		'./app',
 	],
 	output: {
-		path: path.join(__dirname, 'public'),
+		path: path.join(__dirname, '../public'),
 		filename: 'app.min.js',
 	},
 	plugins: [
@@ -57,10 +58,16 @@ module.exports = {
 		rules: [{
 			test: /\.jsx?$/,
 			exclude: /node_modules/,
-			include: [path.resolve(__dirname, 'app')],
+			include: [path.resolve(__dirname, '../app')],
 			use: [
 				'react-hot-loader',
-				'babel-loader',
+				{
+					loader: 'babel-loader',
+					options: {
+						babelrc: false,
+						extends: babelRcPath,
+					}
+				},
 				{
 					loader: 'eslint-loader',
 					options: {

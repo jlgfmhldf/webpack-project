@@ -1,4 +1,5 @@
-import baseConfig from './base.js'
+const webpack = require('webpack')
+import baseConfig from '../base'
 
 export default {
 	...baseConfig,
@@ -10,10 +11,9 @@ export default {
 	watchOptions: {
 		aggregateTimeout: 100,
 	},
-	development: 'cheap-inline-module-source-map',
+	devtool: 'cheap-inline-module-source-map',
 	plugins: [
 		...baseConfig.plugins,
 		new webpack.HotModuleReplacementPlugin(),
-	]
-
+	],
 }
