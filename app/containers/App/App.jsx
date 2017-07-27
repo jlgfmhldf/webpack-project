@@ -46,7 +46,6 @@ export default class App extends PureComponent {
 	}
 
 	componentWillMount() {
-		console.log(this.props)
 		this.props.loadSmoothiesList()
 	}
 

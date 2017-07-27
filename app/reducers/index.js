@@ -1,16 +1,17 @@
-import allSmoothies from '../../data/list.json'
 import {
 	SELECT_INGREDIENTS,
 	FIND_INGREDIENT,
 	CHANGE_CALORIES_VALUE,
 	UPDATE_SMOOTHIES_LIST,
 	HIDE_SNACKBAR,
+	LOAD_SMOOTHIES_LIST_SUCCESS,
 } from '../constants/actions'
 
 import {
 	ingredientNotFound,
 } from '../constants/texts'
 
+const allSmoothies = []
 import getIngredients from '../helpers/getIngredients'
 
 function arrayContainsArray (superset, subset) {
@@ -40,7 +41,7 @@ const filterByCalories = calories =>
 
 const defaultState = {
 	selectedIngredients: [],
-	smoothies: allSmoothies,
+	smoothies: [],
 	ingredients: getIngredients(allSmoothies),
 	calories: undefined,
 	ingredientIsNotFound: false,
@@ -117,6 +118,16 @@ export default function (state = defaultState, { type, payload }) {
 				text: undefined,
 				show: false,
 			},
+		}
+	}
+
+	case LOAD_SMOOTHIES_LIST_SUCCESS: {
+		const { smoothies } = payload
+
+		console.log(smoothies)
+		return {
+			...state,
+			smoothies,
 		}
 	}
 

@@ -55,10 +55,10 @@ const requestLoadSmoothiesList = () => ({
 	type: LOAD_SMOOTHIES_LIST,
 })
 
-const successLoadSmoothiesList = list => ({
+const successLoadSmoothiesList = smoothies => ({
 	type: LOAD_SMOOTHIES_LIST_SUCCESS,
 	payload: {
-		list,
+		smoothies,
 	}
 })
 
@@ -69,10 +69,13 @@ const errorLoadSmoothiesList = error => ({
 	}
 })
 
-export const loadSmoothiesList = () => ({ dispatch }) => {
+export const loadSmoothiesList = () => (dispatch) => {
 	dispatch(requestLoadSmoothiesList())
 
-	fetch('../../data/list.json')
-		.then(list => dispatch(successLoadSmoothiesList(list)))
+	fetch(require('../../data/list.json'))
+		.then(list => list.json())
+		.then(smoothies => {
+			dispatch(successLoadSmoothiesList(smoothies))
+		})
 		.catch(error => dispatch(errorLoadSmoothiesList(error)))
 }

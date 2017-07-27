@@ -25,7 +25,7 @@ const mapDispatchToProps = dispatch => ({
 	updateSmoothiesList: (ingredients, calories) => dispatch(updateSmoothiesList(ingredients, calories)),
 	findIngredient: value => dispatch(findIngredient(value)),
 	hideSnackBar: () => dispatch(hideSnackBarAction()),
-	loadSmoothiesList,
+	loadSmoothiesList: () => dispatch(loadSmoothiesList()),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(App)
