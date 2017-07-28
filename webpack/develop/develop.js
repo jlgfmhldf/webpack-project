@@ -1,4 +1,4 @@
-const webpack = require('webpack')
+import webpack from 'webpack'
 import baseConfig from '../base'
 
 export default {
