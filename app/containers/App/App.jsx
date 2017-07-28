@@ -15,6 +15,7 @@ import {
 } from 'react-toolbox'
 import IngredientsSelect from '../../components/IngredientsSelect'
 import SmoothiesList from '../../components/SmoothiesList'
+import Loading from '../../components/Loading'
 import s from './App.css'
 
 export default class App extends PureComponent {
@@ -88,6 +89,7 @@ export default class App extends PureComponent {
 
 		return (
 			<div className={s.App}>
+				<Loading />
 				<Layout>
 					<Panel>
 						<h1 className={s.h1}>MAKE YOUR SMOOTHIE</h1>
