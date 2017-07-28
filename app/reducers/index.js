@@ -42,7 +42,7 @@ const filterByCalories = calories =>
 const defaultState = {
 	selectedIngredients: [],
 	smoothies: [],
-	ingredients: getIngredients(allSmoothies),
+	ingredients: [],
 	calories: undefined,
 	ingredientIsNotFound: false,
 	snackbar: {
@@ -124,10 +124,10 @@ export default function (state = defaultState, { type, payload }) {
 	case LOAD_SMOOTHIES_LIST_SUCCESS: {
 		const { smoothies } = payload
 
-		console.log(smoothies)
 		return {
 			...state,
 			smoothies,
+			ingredients: getIngredients(smoothies)
 		}
 	}
 
