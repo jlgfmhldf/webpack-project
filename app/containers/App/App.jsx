@@ -90,8 +90,6 @@ export default class App extends PureComponent {
 		const smoothiesLength = !!smoothies.length
 		const selectedIngredientsLength = !!selectedIngredients.length
 
-		console.log(loading)
-
 		return (
 			<div className={s.App}>
 				{loading && <Loading />}
