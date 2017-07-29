@@ -26,6 +26,7 @@ export default class App extends PureComponent {
 		ingredients: array,
 		selectedIngredients: array,
 		isShowSnackbar: bool,
+		loading: bool,
 		selectIngredients: func,
 		changeCaloriesValue: func,
 		updateSmoothiesList: func,
@@ -35,6 +36,7 @@ export default class App extends PureComponent {
 	}
 
 	static defaultProps = {
+		loading: false,
 		ingredients: [],
 		smoothies: [],
 		selectedIngredients: [],
@@ -79,6 +81,7 @@ export default class App extends PureComponent {
 			ingredients,
 			smoothies,
 			isShowSnackbar,
+			loading,
 			selectedIngredients,
 			findIngredient,
 			hideSnackBar,
@@ -87,9 +90,11 @@ export default class App extends PureComponent {
 		const smoothiesLength = !!smoothies.length
 		const selectedIngredientsLength = !!selectedIngredients.length
 
+		console.log(loading)
+
 		return (
 			<div className={s.App}>
-				<Loading />
+				{loading && <Loading />}
 				<Layout>
 					<Panel>
 						<h1 className={s.h1}>MAKE YOUR SMOOTHIE</h1>

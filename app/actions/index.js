@@ -5,7 +5,7 @@ import {
 	UPDATE_SMOOTHIES_LIST,
 	SHOW_SNACKBAR,
 	HIDE_SNACKBAR,
-	LOAD_SMOOTHIES_LIST,
+	LOAD_SMOOTHIES_LIST_REQUEST,
 	LOAD_SMOOTHIES_LIST_SUCCESS,
 	LOAD_SMOOTHIES_LIST_ERROR,
 } from '../constants/actions'
@@ -52,7 +52,7 @@ export const hideSnackBarAction = () => ({
 })
 
 const requestLoadSmoothiesList = () => ({
-	type: LOAD_SMOOTHIES_LIST,
+	type: LOAD_SMOOTHIES_LIST_REQUEST,
 })
 
 const successLoadSmoothiesList = smoothies => ({

@@ -17,6 +17,7 @@ const mapStateToProps = state => ({
 	ingredients: state.ingredients,
 	isShowSnackbar: state.snackbar.show,
 	snackbarText: state.snackbar.text,
+	loading: state.loading,
 })
 
 const mapDispatchToProps = dispatch => ({

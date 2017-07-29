@@ -5,6 +5,7 @@ import {
 	UPDATE_SMOOTHIES_LIST,
 	HIDE_SNACKBAR,
 	LOAD_SMOOTHIES_LIST_SUCCESS,
+	LOAD_SMOOTHIES_LIST_REQUEST,
 } from '../constants/actions'
 
 import {
@@ -48,7 +49,8 @@ const defaultState = {
 	snackbar: {
 		show: false,
 		text: undefined,
-	}
+	},
+	isShowLoader: false,
 }
 
 /* eslint-disable no-unused-vars */
@@ -121,13 +123,22 @@ export default function (state = defaultState, { type, payload }) {
 		}
 	}
 
+	case LOAD_SMOOTHIES_LIST_REQUEST: {
+
+		return {
+			...state,
+			loading: true,
+		}
+	}
+
 	case LOAD_SMOOTHIES_LIST_SUCCESS: {
-		const { smoothies } = payload
+		const {smoothies} = payload
 
 		return {
 			...state,
 			smoothies,
-			ingredients: getIngredients(smoothies)
+			ingredients: getIngredients(smoothies),
+			loading: false,
 		}
 	}
 
