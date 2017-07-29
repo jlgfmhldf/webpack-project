@@ -1,4 +1,6 @@
 import webpack from 'webpack'
+import CompressionPlugin from 'compression-webpack-plugin'
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
 import baseConfig from '../base'
 
 export default {
@@ -14,6 +16,13 @@ export default {
 	devtool: 'cheap-inline-module-source-map',
 	plugins: [
 		...baseConfig.plugins,
+		new BundleAnalyzerPlugin(),
 		new webpack.HotModuleReplacementPlugin(),
+		new CompressionPlugin({
+			algorithm: "gzip",
+			test: /\.js$|\.html$/,
+			threshold: 10240,
+			minRatio: 0.8
+		}),
 	],
 }

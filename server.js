@@ -13,6 +13,12 @@ app.use(webpackDevMiddleware(compiler, {
 }))
 app.use(webpackHotMiddleware(compiler))
 
+app.get('*.js', function (req, res, next) {
+	req.url = req.url + '.gz'
+	res.set('Content-Encoding', 'gzip')
+	next()
+})
+
 app.get("/", function(req, res) {
 	res.sendFile(`${__dirname}/public/index.html`)
 })
