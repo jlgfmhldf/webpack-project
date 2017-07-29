@@ -1,4 +1,5 @@
 import webpack from 'webpack'
+import CompressionPlugin from 'compression-webpack-plugin'
 import baseConfig from '../base'
 
 export default {
@@ -15,5 +16,11 @@ export default {
 	plugins: [
 		...baseConfig.plugins,
 		new webpack.HotModuleReplacementPlugin(),
+		new CompressionPlugin({
+			algorithm: "gzip",
+			test: /\.js$|\.html$/,
+			threshold: 10240,
+			minRatio: 0.8
+		}),
 	],
 }
