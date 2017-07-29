@@ -50,6 +50,9 @@ module.exports = {
 		new webpack.DefinePlugin({
 			__DEV__: isDevelopment,
 			__PROD__: isProd,
+			'process.env': {
+				NODE_ENV: JSON.stringify('production'),
+			},
 		}),
 		new BundleAnalyzerPlugin(),
 	],
