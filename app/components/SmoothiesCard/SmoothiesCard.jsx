@@ -2,13 +2,14 @@ import React, { PureComponent } from 'react'
 import { number, string, func } from 'prop-types'
 import noop from 'noop3'
 import {
-	Card,
 	CardMedia,
 	CardTitle,
 	CardText,
-	Button,
 } from 'react-toolbox'
-import './SmoothiesCard.css'
+import Card from 'react-toolbox/lib/card'
+import Button from 'react-toolbox/lib/button'
+import InfoItem from './SmoothiesCardInfoItem'
+import s from './SmoothiesCard.css'
 
 export default class SmoothiesCard extends PureComponent {
 	static propTypes = {
@@ -47,18 +48,37 @@ export default class SmoothiesCard extends PureComponent {
 		fats && subtitle.push(`Жиры: ${fats}`)
 		carbohydrates && subtitle.push(`Углеводы: ${carbohydrates}`)
 
-		const titleText = calories ? `${title} (${calories})` : title
-
 		return (
 			<Card>
 				<CardTitle
-					title={titleText}
-					subtitle={subtitle.join(' / ')}
+					title={title}
 				/>
 				<CardMedia
 					aspectRatio="wide"
 					image={image}
 				/>
+				<div className={s.info}>
+					{proteins && <InfoItem
+						title='Б'
+						color='#97CC04'
+						value={proteins}
+					/>}
+					{fats && <InfoItem
+						title='Ж'
+						color='#EEB902'
+						value={fats}
+					/>}
+					{carbohydrates && <InfoItem
+						title='У'
+						color='#F45D01'
+						value={carbohydrates}
+					/>}
+					{calories && <InfoItem
+						title='К'
+						color='#2D7DD2'
+						value={calories}
+					/>}
+				</div>
 				{description && <CardText>{description}</CardText>}
 				<Button
 					label="Приготовить"
