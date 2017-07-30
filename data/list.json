@@ -145,5 +145,100 @@
     ],
     "link": "https://eda.ru/recepty/napitki/utrennij-fruktovij-smuzi-35594",
     "image": "https://img02.rl0.ru/eda/c588x390i/s2.eda.ru/StaticContent/Photos/110805134417/140227174350/p_O.jpg"
+  },
+  {
+    "title": "Ягодно-гранатовый смузи",
+    "nutrition_value": {
+
+    },
+    "ingredients": [
+      "Малина",
+      "Черника",
+      "Клубника",
+      "Голубика",
+      "Гранатовый сок",
+      "Семена Чиа"
+    ],
+    "link": "https://the-challenger.ru/food/10-retseptov-smuzi-na-zavtrak/",
+    "image": "https://the-challenger.ru/wp-content/uploads/2015/10/Chia-Berry-Smoothie.jpg"
+  },
+  {
+    "title": "Яблочно-банановый смузи",
+    "nutrition_value": {
+
+    },
+    "ingredients": [
+      "Миндаль",
+      "Яблоко",
+      "Банан",
+      "Йогурт",
+      "Молоко",
+      "Корица"
+    ],
+    "link": "https://the-challenger.ru/food/10-retseptov-smuzi-na-zavtrak/",
+    "image": "https://the-challenger.ru/wp-content/uploads/2015/10/Apple-Cinnamon-Breakfast-Smoothie.jpg"
+  },
+  {
+    "title": "Тропический фруктовый смузи",
+    "nutrition_value": {
+
+    },
+    "ingredients": [
+      "Ананас",
+      "Папайя",
+      "Банан",
+      "Огурец",
+      "Кокосовая вода",
+      "Шпинат",
+      "Лёд"
+    ],
+    "link": "https://the-challenger.ru/food/10-retseptov-smuzi-na-zavtrak/",
+    "image": "https://the-challenger.ru/wp-content/uploads/2015/10/Debloating-Papaya-Smoothie-534x800.jpg"
+  },
+  {
+    "title": "Сладкий шпинатный смузи",
+    "nutrition_value": {
+
+    },
+    "ingredients": [
+      "Листья шпината",
+      "Груша",
+      "Виноград",
+      "Йогурт",
+      "Авокадо",
+      "Сок лайма"
+    ],
+    "link": "https://the-challenger.ru/food/10-retseptov-smuzi-na-zavtrak/",
+    "image": "https://the-challenger.ru/wp-content/uploads/2015/10/Sweet-Spinach-Smoothie.jpg"
+  },
+  {
+    "title": "Чернично-ананасовый смузи",
+    "nutrition_value": {
+
+    },
+    "ingredients": [
+      "Йогурт",
+      "Миндальное масло",
+      "Черника",
+      "Ананас",
+      "Капуста Кале"
+    ],
+    "link": "https://the-challenger.ru/food/10-retseptov-smuzi-na-zavtrak/",
+    "image": "https://the-challenger.ru/wp-content/uploads/2015/10/Flat-Belly-Smoothie-534x800.jpg"
+  },
+  {
+    "title": "Капустно-черничный смузи",
+    "nutrition_value": {
+
+    },
+    "ingredients": [
+      "Йогурт",
+      "Авокадо",
+      "Черника",
+      "Ананас",
+      "Капуста Кале"
+    ],
+    "link": "https://the-challenger.ru/food/10-retseptov-smuzi-na-zavtrak/",
+    "image": "https://the-challenger.ru/wp-content/uploads/2015/10/Pineapple-Kale-Smoothie-534x800.jpg"
   }
 ]
