@@ -17,8 +17,11 @@ export default class Test extends PureComponent {
 	render() {
 		const { children } = this.props
 
+		/* eslint-disable no-console*/
+		console.log('test')
+
 		return (
-          <div className={s.test}>{children}</div>
+			<div className={s.test}>{children}</div>
 		)
 	}
 }
