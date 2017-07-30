@@ -47,10 +47,12 @@ export default class SmoothiesCard extends PureComponent {
 		fats && subtitle.push(`Жиры: ${fats}`)
 		carbohydrates && subtitle.push(`Углеводы: ${carbohydrates}`)
 
+		const titleText = calories ? `${title} (${calories})` : title
+
 		return (
 			<Card>
 				<CardTitle
-					title={title + ` (${calories})`}
+					title={titleText}
 					subtitle={subtitle.join(' / ')}
 				/>
 				<CardMedia
