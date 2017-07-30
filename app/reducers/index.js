@@ -12,7 +12,6 @@ import {
 	ingredientNotFound,
 } from '../constants/texts'
 
-const allSmoothies = []
 import getIngredients from '../helpers/getIngredients'
 
 function arrayContainsArray (superset, subset) {
@@ -21,10 +20,13 @@ function arrayContainsArray (superset, subset) {
 	})
 }
 
-const findSmoothies = (ingredients = []) => {
+const findSmoothies = (
+	smoothies = [],
+	ingredients = []
+) => {
 	let resultArray = []
 
-	allSmoothies.forEach(item => {
+	smoothies.forEach(item => {
 		const { ingredients: itemIngredients } = item
 
 		const smoothieContainIngredients = arrayContainsArray(itemIngredients, ingredients)
@@ -43,6 +45,7 @@ const filterByCalories = calories =>
 const defaultState = {
 	selectedIngredients: [],
 	smoothies: [],
+	findedSmoothies: [],
 	ingredients: [],
 	calories: undefined,
 	ingredientIsNotFound: false,
@@ -59,23 +62,24 @@ export default function (state = defaultState, { type, payload }) {
 
 	case UPDATE_SMOOTHIES_LIST: {
 		const { ingredients, calories } = payload
+		const { smoothies } = state
 
 		if (!ingredients.length) {
 			return {
 				...state,
-				smoothies: allSmoothies,
+				findedSmoothies: [],
 			}
 		}
 
-		let smoothies = findSmoothies(ingredients)
+		let newSmoothiesList = findSmoothies(smoothies, ingredients)
 
 		if (calories) {
-			smoothies = smoothies.filter(filterByCalories(calories))
+			newSmoothiesList = newSmoothiesList.filter(filterByCalories(calories))
 		}
 
 		return {
 			...state,
-			smoothies,
+			findedSmoothies: newSmoothiesList,
 		}
 	}
 

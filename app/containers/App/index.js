@@ -12,7 +12,7 @@ import {
 
 const mapStateToProps = state => ({
 	selectedIngredients: state.selectedIngredients,
-	smoothies: state.smoothies,
+	smoothies: state.findedSmoothies.length ? state.findedSmoothies : state.smoothies,
 	calories: state.calories,
 	ingredients: state.ingredients,
 	isShowSnackbar: state.snackbar.show,
