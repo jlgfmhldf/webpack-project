@@ -80,17 +80,19 @@ export default class SmoothiesCard extends PureComponent {
 					/>}
 				</div>
 				{description && <CardText>{description}</CardText>}
-				<Button
-					label="Приготовить"
-					onClick={onView}
-					raised
-					accent
-					href={link}
-					target='_blank'
-					styles={{
-						width: '100%',
-					}}
-				/>
+				<div className={s.button}>
+					<Button
+						label="Приготовить"
+						onClick={onView}
+						raised
+						accent
+						href={link}
+						target='_blank'
+						style={{
+							width: '100%'
+						}}
+					/>
+				</div>
 			</Card>
 		)
 	}
