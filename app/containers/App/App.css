@@ -12,3 +12,17 @@
     padding: .3em;
     color: var(--main)
 }
+
+.caloriesInput {
+    width: 33%;
+}
+
+@media all and (max-width: 600px){
+    .App {
+        width: 100%;
+    }
+    
+    .caloriesInput {
+        width: 100%;
+    }
+}

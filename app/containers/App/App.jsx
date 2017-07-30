@@ -105,7 +105,7 @@ export default class App extends PureComponent {
 							onSelect={this.handleSelectIngredients}
 							onInput={findIngredient}
 						/>
-						<div style={{ width: 300 }}>
+						<div className={s.caloriesInput}>
 							<Input
 								type='number'
 								value={calories}
