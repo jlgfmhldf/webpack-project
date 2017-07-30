@@ -99,5 +99,51 @@
     ],
     "link": "http://www.calorizator.ru/recipes/37396",
     "image": "http://www.calorizator.ru/sites/default/files/imagecache/recipes_full/recipes/37396.jpg"
+  },
+  {
+    "title": "Ягодный смузи с яблоками",
+    "nutrition_value": {
+
+    },
+    "ingredients": [
+      "Малина",
+      "Черника",
+      "Клубника",
+      "Апельсиновый сок",
+      "Яблоко",
+      "Мëд"
+    ],
+    "link": "http://ivona.bigmir.net/cooking/429161-Velikij-post-2016--Jagodnyj-smuzi-s-jablokami",
+    "image": "http://v.img.com.ua/nxs50/b/600x500/9/30/c1f43b964aa067c00b217189ddf12309.jpg"
+  },
+  {
+    "title": "Фруктовый смузи в три слоя",
+    "nutrition_value": {
+
+    },
+    "ingredients": [
+      "Киви",
+      "Вишня",
+      "Банан",
+      "Апельсин",
+      "Нектарин"
+    ],
+    "link": "https://www.youtube.com/watch?v=IAaCVmoC37E",
+    "image": "http://mycooktes.ru/uploads/images/topic/2015/10/26/56c22f1965_1000.png"
+  },
+  {
+    "title": "Утренний фруктовый смузи",
+    "nutrition_value": {
+
+    },
+    "ingredients": [
+      "Киви",
+      "Банан",
+      "Малина",
+      "Фундук",
+      "Мёд"
+    ],
+    "link": "https://eda.ru/recepty/napitki/utrennij-fruktovij-smuzi-35594",
+    "image": "https://img02.rl0.ru/eda/c588x390i/s2.eda.ru/StaticContent/Photos/110805134417/140227174350/p_O.jpg"
   }
 ]
