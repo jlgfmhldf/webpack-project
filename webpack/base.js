@@ -5,8 +5,8 @@ const cssnano = require('cssnano')
 const StyleLintPlugin = require('stylelint-webpack-plugin') //TODO
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const PostCSSAssetsPlugin = require('postcss-assets-webpack-plugin')
-const NODE_ENV = process.env.NODE_ENV || 'development'
-const isDevelopment = NODE_ENV === 'development'
+const NODE_ENV = process.env.NODE_ENV || 'develop'
+const isDevelopment = NODE_ENV === 'develop'
 const isProd = NODE_ENV === 'production'
 const { stringify } = JSON
 

@@ -7,6 +7,8 @@ export default function configureStore(initialState) {
 		thunk,
 	]
 
+	console.log(__DEV__)
+
 	if (__DEV__) {
 		middlewares.push(
 			require('redux-logger').createLogger()
