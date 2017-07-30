@@ -77,6 +77,17 @@ export default function (state = defaultState, { type, payload }) {
 			newSmoothiesList = newSmoothiesList.filter(filterByCalories(calories))
 		}
 
+		if (!newSmoothiesList.length) {
+			return {
+				...state,
+				snackbar: {
+					show: true,
+					text: 'Ничего не найдено',
+				},
+				findedSmoothies: [],
+			}
+		}
+
 		return {
 			...state,
 			findedSmoothies: newSmoothiesList,
