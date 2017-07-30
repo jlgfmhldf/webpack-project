@@ -14,6 +14,7 @@ app.use(webpackDevMiddleware(compiler, {
 app.use(webpackHotMiddleware(compiler))
 
 app.get('*.js', function (req, res, next) {
+	console.log('test')
 	req.url = req.url + '.gz'
 	res.set('Content-Encoding', 'gzip')
 	next()
