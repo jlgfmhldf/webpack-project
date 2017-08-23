@@ -6,7 +6,7 @@
   "author": "Виктория Земцева <jlgfmhldf@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "NODE_ENV=develop node server.js",
+    "start": "node server.js",
     "build": "NODE_ENV=production webpack --config ./webpack/production",
     "lint": "eslint .",
     "lint:changed": "eslint `git diff --name-status $(git merge-base origin/master HEAD)..HEAD | grep -E '^[AMR]' | awk ' {print $2} ' | grep -E '\\.js$'`",
