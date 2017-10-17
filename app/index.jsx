@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import configureStore from './store/configureStore'
-import AppContainer from './containers/App/App'
+import AppContainer from './containers/App'
 import './styles/index.css'
 
 const store = configureStore()

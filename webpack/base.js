@@ -5,9 +5,8 @@ const cssnano = require('cssnano')
 const StyleLintPlugin = require('stylelint-webpack-plugin') //TODO
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const PostCSSAssetsPlugin = require('postcss-assets-webpack-plugin')
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
-const NODE_ENV = process.env.NODE_ENV || 'development'
-const isDevelopment = NODE_ENV === 'development'
+const NODE_ENV = process.env.NODE_ENV || 'develop'
+const isDevelopment = NODE_ENV === 'develop'
 const isProd = NODE_ENV === 'production'
 const { stringify } = JSON
 
@@ -50,8 +49,10 @@ module.exports = {
 		new webpack.DefinePlugin({
 			__DEV__: isDevelopment,
 			__PROD__: isProd,
+			'process.env': {
+				NODE_ENV: JSON.stringify('production'),
+			},
 		}),
-		new BundleAnalyzerPlugin(),
 	],
 	devServer: {
 		inline: true
@@ -87,7 +88,7 @@ module.exports = {
 			}),
 		},
 		{
-			test: /\.(eot|svg|ttf|woff|woff2)$/,
+			test: /\.(eot|svg|ttf|woff|woff2|json)$/,
 			loader: 'url-loader',
 			options: {
 				limit: 1,
