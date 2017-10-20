@@ -24,7 +24,7 @@ export default class App extends PureComponent {
 			<div className={s.App}>
 				<Test>
 					Webpack Starter
-			</Test>
+				</Test>
 			</div>
 		)
 	}
