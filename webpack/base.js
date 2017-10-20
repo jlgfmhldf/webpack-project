@@ -1,11 +1,8 @@
 const path = require('path')
 const webpack = require('webpack')
-const mqpacker = require('css-mqpacker')
-const cssnano = require('cssnano')
 const StyleLintPlugin = require('stylelint-webpack-plugin') //TODO
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const PostCSSAssetsPlugin = require('postcss-assets-webpack-plugin')
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 const NODE_ENV = process.env.NODE_ENV || 'development'
 const isDevelopment = NODE_ENV === 'development'
 const isProd = NODE_ENV === 'production'
@@ -30,28 +27,20 @@ module.exports = {
 		}),
 		new StyleLintPlugin({
 			files: [
-				'./app/components/**/*.css',
-				'./app/styles/*.css'
+				'./app/components/**/*.pcss',
+				'./app/styles/*.pcss'
 			], //TODO
 			configFile: './.stylelintrc',
 		}),
 		new ExtractTextPlugin('style.css'),
 		new PostCSSAssetsPlugin({
-			test: /\.css$/,
+			test: /\.pcss$/,
 			log: true,
-			plugins: [
-				// Pack same CSS media query rules into one media query rule
-				mqpacker,
-				cssnano({
-					preset: 'default'
-				}),
-			],
 		}),
 		new webpack.DefinePlugin({
 			__DEV__: isDevelopment,
 			__PROD__: isProd,
 		}),
-		new BundleAnalyzerPlugin(),
 	],
 	devServer: {
 		inline: true
@@ -62,7 +51,7 @@ module.exports = {
 			exclude: /node_modules/,
 			include: [path.resolve(__dirname, '../app')],
 			use: [
-				'react-hot-loader',
+				'react-hot-loader/webpack',
 				{
 					loader: 'babel-loader',
 					options: {
@@ -78,16 +67,31 @@ module.exports = {
 				}
 			],
 		}, {
-			test: /\.css$/,
+			test: /\.pcss$/,
 			use: ExtractTextPlugin.extract({
 				use: [
-					'css-loader?modules',
+					{
+						loader: 'css-loader',
+						options: {
+							importLoaders: 1,
+							modules: true,
+							localIdentName: '[local]'
+						}
+					},
 					'postcss-loader',
 				]
 			}),
 		},
 		{
-			test: /\.(eot|svg|ttf|woff|woff2)$/,
+			test: /\.svg$/,
+			use: [
+				{
+					loader: 'svg-sprite-loader',
+				},
+			],
+		},
+		{
+			test: /\.(eot|ttf|woff|woff2)$/,
 			loader: 'url-loader',
 			options: {
 				limit: 1,
@@ -96,5 +100,5 @@ module.exports = {
 	},
 	resolve: {
 		extensions: ['.js', '.jsx'],
-	}
+	},
 }
