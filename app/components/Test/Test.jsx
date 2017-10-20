@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import { func, node } from 'prop-types'
 import noop from 'noop3'
-import s from './Test.css'
+import s from './Test.pcss'
 
 export default class Test extends PureComponent {
 	static propTypes = {
