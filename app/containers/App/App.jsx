@@ -22,9 +22,11 @@ export default class App extends PureComponent {
 	render() {
 		return (
 			<div className={s.App}>
-				<Test>
-					Webpack Starter
-				</Test>
+				<div className={s.App__center}>
+					<Test>
+						Webpack Starter
+					</Test>
+				</div>
 			</div>
 		)
 	}
